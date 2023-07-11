@@ -20,5 +20,5 @@ jobs:
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: python-version-artifact
-          path: "./"
+          name: python-version-artifact-${{ matrix.python-version }}
+          path: ${{ steps.python-version-output.outputs.stdout }}
